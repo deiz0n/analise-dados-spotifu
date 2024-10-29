@@ -215,6 +215,12 @@ def tabela_expandida_popularidade():
     )
 
 
+def count_artist_and_songs():
+    st.subheader("Total de Artista")
+    total_artist = spotify_youtube['Artist'].nunique()
+    st.metric(label="Artistas", value=total_artist)
+
+
 if page == "Home":
     numbers_streams_and_views()
     danceability_vs_views()
@@ -225,3 +231,4 @@ elif page == "Others":
     top_songs_metrics()
     valence_acousticness_loudness()
     tabela_expandida_popularidade()
+    count_artist_and_songs()
